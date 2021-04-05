@@ -4,12 +4,16 @@ Proposal for an `Object.has()` method to make `Object.prototype.hasOwnProperty()
 
 ## Status
 
-This proposal has not yet been introduced to TC39. [Slides](https://docs.google.com/presentation/d/1FvDwrmzin_qGMzH-Cc8l5bHK91UxkpZJwuugoay5aNQ/edit?usp=sharing)
+This proposal has not yet been introduced to TC39.
 
 Authors:
 
 - [@jamiebuilds](https://github.com/jamiebuilds) (Jamie Kyle, Discord)
 - Champion: [@bnb](https://github.com/bnb) (Tierney Cyren, Microsoft)
+
+Slides:
+
+- [For stage 1 on 2021/04](https://github.com/tc39/agendas/blob/master/2021/04.md)
 
 ## Motivation
 
