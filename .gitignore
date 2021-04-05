@@ -36,7 +36,7 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-# Only apps should have lockfiles
+# Jordan doesn't like reproducibility in non-app code
 yarn.lock
 package-lock.json
 npm-shrinkwrap.json

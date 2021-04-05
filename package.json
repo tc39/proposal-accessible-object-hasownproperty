@@ -1,16 +1,16 @@
 {
-  "private": true,
-  "name": "template-for-proposals",
+  "name": "proposal-object-has",
   "description": "A repository template for ECMAScript proposals.",
+  "main": "./polyfill.js",
   "scripts": {
     "start": "npm run build-loose -- --watch",
     "build": "npm run build-loose -- --strict",
     "build-loose": "ecmarkup --verbose spec.emu index.html"
   },
-  "homepage": "https://github.com/tc39/template-for-proposals#readme",
+  "homepage": "https://github.com/jamiebuilds/proposal-object-has#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tc39/template-for-proposals.git"
+    "url": "git+https://github.com/jamiebuilds/proposal-object-has.git"
   },
   "license": "MIT",
   "devDependencies": {

@@ -1,60 +1,145 @@
-# template-for-proposals
+# `Object.has()`
 
-A repository template for ECMAScript proposals.
+Proposal for an `Object.has()` method to make `Object.prototype.hasOwnProperty()` more accessible.
 
-## Before creating a proposal
+## Status
 
-Please ensure the following:
-  1. You have read the [process document](https://tc39.github.io/process-document/)
-  1. You have reviewed the [existing proposals](https://github.com/tc39/proposals/)
-  1. You are aware that your proposal requires being a member of TC39, or locating a TC39 delegate to "champion" your proposal
+This proposal has not yet been introduced to TC39.
 
-## Create your proposal repo
+Authors:
 
-Follow these steps:
-  1.  Click the green ["use this template"](https://github.com/tc39/template-for-proposals/generate) button in the repo header. (Note: Do not fork this repo in GitHub's web interface, as that will later prevent transfer into the TC39 organization)
-  1.  Go to your repo settings “Options” page, under “GitHub Pages”, and set the source to the **main branch** under the root (and click Save, if it does not autosave this setting)
-      1. check "Enforce HTTPS"
-      1. On "Options", under "Features", Ensure "Issues" is checked, and disable "Wiki", and "Projects" (unless you intend to use Projects)
-      1. Under "Merge button", check "automatically delete head branches"
-<!--
-  1.  Avoid merge conflicts with build process output files by running:
-      ```sh
-      git config --local --add merge.output.driver true
-      git config --local --add merge.output.driver true
-      ```
-  1.  Add a post-rewrite git hook to auto-rebuild the output on every commit:
-      ```sh
-      cp hooks/post-rewrite .git/hooks/post-rewrite
-      chmod +x .git/hooks/post-rewrite
-      ```
--->
-  3.  ["How to write a good explainer"][explainer] explains how to make a good first impression.
+- @jamiebuilds (Jamie Kyle, Discord)
+- Champion: @bitandbang (Tierney Cyren, Microsoft)
 
-      > Each TC39 proposal should have a `README.md` file which explains the purpose
-      > of the proposal and its shape at a high level.
-      >
-      > ...
-      >
-      > The rest of this page can be used as a template ...
+## Motivation
 
-      Your explainer can point readers to the `index.html` generated from `spec.emu`
-      via markdown like
+Today, it is very common (especially in library code) to write code like:
 
-      ```markdown
-      You can browse the [ecmarkup output](https://ACCOUNT.github.io/PROJECT/)
-      or browse the [source](https://github.com/ACCOUNT/PROJECT/blob/HEAD/spec.emu).
-      ```
+```js
+let hasOwnProperty = Object.prototype.hasOwnProperty
 
-      where *ACCOUNT* and *PROJECT* are the first two path elements in your project's Github URL.
-      For example, for github.com/**tc39**/**template-for-proposals**, *ACCOUNT* is "tc39"
-      and *PROJECT* is "template-for-proposals".
+if (hasOwnProperty.call(object, "foo")) {
+  console.log("has property foo")
+}
+```
 
+This proposal simplifies that code to:
 
-## Maintain your proposal repo
+```js
+if (Object.has(object, "foo")) {
+  console.log("has property foo")
+}
+```
 
-  1. Make your changes to `spec.emu` (ecmarkup uses HTML syntax, but is not HTML, so I strongly suggest not naming it ".html")
-  1. Any commit that makes meaningful changes to the spec, should run `npm run build` and commit the resulting output.
-  1. Whenever you update `ecmarkup`, run `npm run build` and commit any changes that come from that dependency.
+There are a number of existing libraries which make this more convenient:
 
-  [explainer]: https://github.com/tc39/how-we-work/blob/HEAD/explainer.md
+- [npm: has][npm-has]
+- [npm: lodash.has][npm-lodash-has]
+- [See Related](#related)
+
+This is a common practices because methods on `Object.prototype` can sometimes be unavailable or redefined.
+
+### `Object.create(null)`
+
+`Object.create(null)` will create an object that does not inherit from `Object.prototype`, making those methods inaccessible.
+
+```js
+Object.create(null).hasOwnProperty("foo")
+// Uncaught TypeError: Object.create(...).hasOwnProperty is not a function
+```
+
+### Redefining `hasOwnProperty`
+
+If you do not directly own every property defined of an object, you can't be 100% certain that calling `.hasOwnProperty()` is calling the built-in method:
+
+```js
+let object = {
+  hasOwnProperty() {
+    throw new Error("gotcha!")
+  }
+}
+
+object.hasOwnProperty("foo")
+// Uncaught Error: gotcha!
+```
+
+### ESLint `no-prototype-builtins`
+
+ESLint has a [built-in rule][eslint-no-prototype-builtins] for banning use of prototype builtins like `hasOwnProperty`.
+
+> **From the ESLint documentation for `no-prototype-builtins`:**
+>
+> ---
+>
+> Examples of incorrect code for this rule:
+>
+> ```js
+> /*eslint no-prototype-builtins: "error"*/
+> var hasBarProperty = foo.hasOwnProperty("bar");
+> ...
+> ```
+>
+> Examples of correct code for this rule:
+>
+> ```js
+> /*eslint no-prototype-builtins: "error"*/
+> var hasBarProperty = Object.prototype.hasOwnProperty.call(foo, "bar");
+> ...
+> ```
+
+### MDN `hasOwnProperty()` advice
+
+The MDN documentation for `Object.prototype.hasOwnProperty` includes [advice][mdn-hasownproperty-advice] not to use it off of the prototype chain directly:
+
+> JavaScript does not protect the property name hasOwnProperty; thus, if the possibility exists that an object might have a property with this name, it is necessary to use an external hasOwnProperty to get correct results [...]
+
+## Proposal
+
+This proposal adds a `Object.has(object, property)` method with the same behavior as calling `hasOwnProperty.call(object, property)`
+
+```js
+let object = { foo: false }
+Object.has(object, "foo") // true
+
+let object2 = Object.create({ foo: true })
+Object.has(object2, "foo") // false
+
+let object3 = Object.create(null)
+Object.has(object3, "foo") // false
+```
+
+## Implementations
+
+There are currently no native implementations of `Object.has` in JavaScript engines.
+
+A polyfill of `Object.has()` is available in [polyfill.js](./polyfill.js).
+
+## Q&A
+
+### Why not `Object.hasOwnProperty(object, property)`?
+
+`Object.hasOwnProperty(property)` already exists today because `Object` itself inherits from `Object.prototype` so defining a new method with a different signature would be a breaking change.
+
+### Why the name `has`?
+
+`has` is a popular name for this function in user-land library code ([See Related](#related)).
+
+Alternative Options: `hasOwn`
+
+## Related
+
+- [npm: `has`][npm-has]
+- [npm: `lodash.has`][npm-lodash-has]
+- [underscore `_.has`][underscore-has]
+- [npm: `just-has`][npm-just-has]
+- [ramda: `R.has`][ramda-has]
+- [eslint `no-prototype-builtins`][eslint-no-prototype-builtins]
+- [MDN `hasOwnProperty()` advice][mdn-hasownproperty-advice]
+
+[npm-has]: https://www.npmjs.com/package/has
+[npm-lodash-has]: https://www.npmjs.com/package/lodash.has
+[underscore-has]: https://underscorejs.org/#has
+[npm-just-has]: https://www.npmjs.com/package/just-has
+[ramda-has]: https://ramdajs.com/docs/#has
+[eslint-no-prototype-builtins]: https://eslint.org/docs/rules/no-prototype-builtins
+[mdn-hasownproperty-advice]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty#using_hasownproperty_as_a_property_name
