@@ -8,8 +8,8 @@ This proposal has not yet been introduced to TC39.
 
 Authors:
 
-- @jamiebuilds (Jamie Kyle, Discord)
-- Champion: @bitandbang (Tierney Cyren, Microsoft)
+- [@jamiebuilds](https://github.com/jamiebuilds) (Jamie Kyle, Discord)
+- Champion: [@bnb](https://github.com/bnb) (Tierney Cyren, Microsoft)
 
 ## Motivation
 
