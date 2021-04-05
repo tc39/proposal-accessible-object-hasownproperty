@@ -8,5 +8,5 @@ if (!Object.has) {
     configurable: true,
     enumerable: false,
     writable: true
-  });
+  })
 }
