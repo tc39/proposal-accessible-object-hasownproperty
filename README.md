@@ -126,18 +126,23 @@ A polyfill of `Object.has()` is available in [polyfill.js](./polyfill.js).
 
 ### Why the name `has`?
 
-`has` is a popular name for this function in user-land library code ([See Related](#related)). It also has clear parallels to the use of methods named `entries()`:
+`has` is a popular name for this function in user-land library code ([See Related](#related)). It also fills in a hole in the common operations between `Object`, `Map`, and `Set`.
 
 ```js
-Object.entries(o) // "own" properties
-Map.prototype.entries()
-Set.prototype.entries()
-FormData.prototype.entries()
+Object.keys(o)
+Object.values(o)
+Object.entries(o)
+Object.has(o, p) // New!
 
-Object.has(o, p) // "own" properties
+Map.prototype.keys()
+Map.prototype.values()
+Map.prototype.entries()
 Map.prototype.has(p)
+
+Set.prototype.keys()
+Set.prototype.values()
+Set.prototype.entries()
 Set.prototype.has(p)
-FormData.prototype.has(p)
 ```
 
 Alternative Options: `hasOwn`
