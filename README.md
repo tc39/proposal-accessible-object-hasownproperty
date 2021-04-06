@@ -147,6 +147,12 @@ Set.prototype.has(p)
 
 Alternative Options: `hasOwn`
 
+### Why not use `Map` for dictionaries instead of objects?
+
+Excerpt from https://v8.dev/features/object-fromentries#objects-vs.-maps
+
+> JavaScript also supports Maps, which are often a more suitable data structure than regular objects. So in code that you have full control over, you might be using maps instead of objects. However, as a developer, you do not always get to choose the representation. Sometimes the data you’re operating on comes from an external API or from some library function that gives you an object instead of a map.
+
 ## Related
 
 - [npm: `has`][npm-has]
