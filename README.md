@@ -153,6 +153,10 @@ Excerpt from https://v8.dev/features/object-fromentries#objects-vs.-maps
 
 > JavaScript also supports Maps, which are often a more suitable data structure than regular objects. So in code that you have full control over, you might be using maps instead of objects. However, as a developer, you do not always get to choose the representation. Sometimes the data you’re operating on comes from an external API or from some library function that gives you an object instead of a map.
 
+### Why not place this method on `Reflect`?
+
+The purpose of `Reflect` is to contain, 1:1, a method for each `Proxy` trap. There is already a method on `Proxy` that traps `hasOwnProperty` (`getOwnPropertyDescriptor`) so it doesn't make sense to add an additional trap, therefore it doesn't make sense to place this method on `Reflect`.
+
 ## Related
 
 - [npm: `has`][npm-has]
