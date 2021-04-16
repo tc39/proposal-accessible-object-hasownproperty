@@ -13,7 +13,7 @@ Authors:
 
 Slides:
 
-- [For stage 1 on 2021/04](https://github.com/tc39/agendas/blob/master/2021/04.md)
+- [For stage 1](https://docs.google.com/presentation/d/1FvDwrmzin_qGMzH-Cc8l5bHK91UxkpZJwuugoay5aNQ/edit#slide=id.p) on [2021/04](https://github.com/tc39/agendas/blob/master/2021/04.md)
 
 ## Motivation
 
