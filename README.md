@@ -145,7 +145,7 @@ Set.prototype.entries()
 Set.prototype.has(p)
 ```
 
-Alternative Options: `hasOwn`
+An alternative option would be `Object.hasOwn()` has been [discussed](https://github.com/jamiebuilds/proposal-object-has/issues/3) in order to distinguish this method from `Reflect.has()` but there seems to be a stronger argument that this method should be named after the matching methods on `Map`, `Set`, `FormData`, `URLSearchParams`, and more.
 
 ### Why not use `Map` for dictionaries instead of objects?
 
