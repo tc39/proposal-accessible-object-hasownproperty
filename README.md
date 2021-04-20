@@ -1,6 +1,6 @@
-# `Object.has()`
+# Accessible `Object.prototype.hasOwnProperty()`
 
-Proposal for an `Object.has()` method to make `Object.prototype.hasOwnProperty()` more accessible.
+Proposal for an `Object.hasOwn()` method to make `Object.prototype.hasOwnProperty()` more accessible.
 
 ## Status
 
@@ -30,7 +30,7 @@ if (hasOwnProperty.call(object, "foo")) {
 This proposal simplifies that code to:
 
 ```js
-if (Object.has(object, "foo")) {
+if (Object.hasOwn(object, "foo")) {
   console.log("has property foo")
 }
 ```
@@ -103,20 +103,20 @@ This proposal adds a `Object.has(object, property)` method with the same behavio
 
 ```js
 let object = { foo: false }
-Object.has(object, "foo") // true
+Object.hasOwn(object, "foo") // true
 
 let object2 = Object.create({ foo: true })
-Object.has(object2, "foo") // false
+Object.hasOwn(object2, "foo") // false
 
 let object3 = Object.create(null)
-Object.has(object3, "foo") // false
+Object.hasOwn(object3, "foo") // false
 ```
 
 ## Implementations
 
 There are currently no native implementations of `Object.has` in JavaScript engines.
 
-A polyfill of `Object.has()` is available in [polyfill.js](./polyfill.js).
+A polyfill of `Object.hasOwn()` is available in [polyfill.js](./polyfill.js).
 
 ## Q&A
 
@@ -124,28 +124,9 @@ A polyfill of `Object.has()` is available in [polyfill.js](./polyfill.js).
 
 `Object.hasOwnProperty(property)` already exists today because `Object` itself inherits from `Object.prototype` so defining a new method with a different signature would be a breaking change.
 
-### Why the name `has`?
+### Why the name `hasOwn`?
 
-`has` is a popular name for this function in user-land library code ([See Related](#related)). It also fills in a hole in the common operations between `Object`, `Map`, and `Set`.
-
-```js
-Object.keys(o)
-Object.values(o)
-Object.entries(o)
-Object.has(o, p) // New!
-
-Map.prototype.keys()
-Map.prototype.values()
-Map.prototype.entries()
-Map.prototype.has(p)
-
-Set.prototype.keys()
-Set.prototype.values()
-Set.prototype.entries()
-Set.prototype.has(p)
-```
-
-An alternative option would be `Object.hasOwn()` has been [discussed](https://github.com/jamiebuilds/proposal-object-has/issues/3) in order to distinguish this method from `Reflect.has()` but there seems to be a stronger argument that this method should be named after the matching methods on `Map`, `Set`, `FormData`, `URLSearchParams`, and more.
+This is actively being discussed in Stage 2, see [Issue #3](https://github.com/tc39/proposal-accessible-object-hasownproperty/issues/3)
 
 ### Why not use `Map` for dictionaries instead of objects?
 
