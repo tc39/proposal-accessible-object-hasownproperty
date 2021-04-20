@@ -4,7 +4,7 @@ Proposal for an `Object.has()` method to make `Object.prototype.hasOwnProperty()
 
 ## Status
 
-This proposal has not yet been introduced to TC39.
+This proposal is currently at [Stage 2](https://github.com/tc39/proposals#stage-2)
 
 Authors:
 
