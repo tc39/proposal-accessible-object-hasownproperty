@@ -1064,7 +1064,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let sdoMap = JSON.parse(`{}`);
-let biblio = JSON.parse(`{"refsByClause":{"sec-object.has":["_ref_0","_ref_1","_ref_2"]},"entries":[{"type":"step","id":"step-has-toobject","stepNumbers":[1],"referencingIds":[],"key":"step-has-toobject"},{"type":"step","id":"step-has-topropertykey","stepNumbers":[2],"referencingIds":[],"key":"step-has-topropertykey"},{"type":"clause","id":"sec-object.has","aoid":null,"titleHTML":"Object.has ( <var>object</var>, <var>property</var> )","number":"1","referencingIds":[],"key":"Object.has ( object, property )"},{"type":"clause","id":"sec-copyright-and-software-license","aoid":null,"titleHTML":"Copyright &amp; Software License","number":"A","referencingIds":[],"key":"Copyright & Software License"}]}`);</script><style>body {
+let biblio = JSON.parse(`{"refsByClause":{"sec-object.has":["_ref_0","_ref_1","_ref_2"]},"entries":[{"type":"clause","id":"sec-object.has","aoid":null,"titleHTML":"Object.has ( <var>object</var>, <var>property</var> )","number":"1","referencingIds":[],"key":"Object.has ( object, property )"},{"type":"clause","id":"sec-copyright-and-software-license","aoid":null,"titleHTML":"Copyright &amp; Software License","number":"A","referencingIds":[],"key":"Copyright & Software License"}]}`);</script><style>body {
   display: flex;
   font-size: 18px;
   line-height: 1.5;
@@ -2213,7 +2213,7 @@ li.menu-search-result-term:before {
 <emu-clause id="sec-object.has">
   <h1><span class="secnum">1</span> Object.has ( <var>object</var>, <var>property</var> )</h1>
   <p>When the <code>has</code> method is called, the following steps are taken:</p>
-  <emu-alg><ol><li id="step-has-toobject">Let <var>O</var> be ?&nbsp;<emu-xref aoid="ToObject" id="_ref_0"><a href="https://tc39.es/ecma262/#sec-toobject">ToObject</a></emu-xref>(<var>object</var>).</li><li id="step-has-topropertykey">Let <var>P</var> be ?&nbsp;<emu-xref aoid="ToPropertyKey" id="_ref_1"><a href="https://tc39.es/ecma262/#sec-topropertykey">ToPropertyKey</a></emu-xref>(<var>property</var>).</li><li>Return ?&nbsp;<emu-xref aoid="HasOwnProperty" id="_ref_2"><a href="https://tc39.es/ecma262/#sec-hasownproperty">HasOwnProperty</a></emu-xref>(<var>O</var>, <var>P</var>).</li></ol></emu-alg>
+  <emu-alg><ol><li>Let <var>O</var> be ?&nbsp;<emu-xref aoid="ToObject" id="_ref_0"><a href="https://tc39.es/ecma262/#sec-toobject">ToObject</a></emu-xref>(<var>object</var>).</li><li>Let <var>P</var> be ?&nbsp;<emu-xref aoid="ToPropertyKey" id="_ref_1"><a href="https://tc39.es/ecma262/#sec-topropertykey">ToPropertyKey</a></emu-xref>(<var>property</var>).</li><li>Return ?&nbsp;<emu-xref aoid="HasOwnProperty" id="_ref_2"><a href="https://tc39.es/ecma262/#sec-hasownproperty">HasOwnProperty</a></emu-xref>(<var>O</var>, <var>P</var>).</li></ol></emu-alg>
 </emu-clause><emu-annex id="sec-copyright-and-software-license">
       <h1><span class="secnum">A</span> Copyright &amp; Software License</h1>
       
