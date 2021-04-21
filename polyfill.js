@@ -1,4 +1,4 @@
-if (!Object.has) {
+if (!Object.hasOwn) {
   var hasOwnProperty = Object.prototype.hasOwnProperty
 
   Object.defineProperty(Object, "hasOwn", {
