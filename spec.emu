@@ -5,7 +5,7 @@
 <script src="./spec.js"></script>
 <pre class="metadata">
 title: Accessible `Object.hasOwnProperty`
-stage: -1
+stage: 2
 contributors: Jamie Kyle
 </pre>
 
