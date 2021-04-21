@@ -14,7 +14,7 @@ contributors: Jamie Kyle
   <p>When the `has` method is called, the following steps are taken:</p>
   <emu-alg>
     1. [id="step-has-topropertykey"] Let _P_ be ? ToPropertyKey(_property_).
-    1. [id="step-has-toobject"] Let _O_ be ? ToObject(_value_).
+    1. [id="step-has-toobject"] Let _O_ be ? ToObject(_object_).
     1. Return ? HasOwnProperty(_O_, _P_).
   </emu-alg>
   <emu-note>
