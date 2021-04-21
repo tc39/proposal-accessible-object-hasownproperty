@@ -3,7 +3,7 @@ if (!Object.has) {
 
   Object.defineProperty(Object, "hasOwn", {
     value: function(object, property) {
-      return hasOwnProperty.call(object, property)
+      return hasOwnProperty.call(Object(object), property)
     },
     configurable: true,
     enumerable: false,
