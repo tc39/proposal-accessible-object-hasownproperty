@@ -1,9 +1,9 @@
-if (!Object.has) {
+if (!Object.hasOwn) {
   var hasOwnProperty = Object.prototype.hasOwnProperty
 
-  Object.defineProperty(Object, "has", {
+  Object.defineProperty(Object, "hasOwn", {
     value: function(object, property) {
-      return hasOwnProperty.call(object, property)
+      return hasOwnProperty.call(Object(object), property)
     },
     configurable: true,
     enumerable: false,

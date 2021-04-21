@@ -1,16 +1,16 @@
 {
-  "name": "proposal-object-has",
-  "description": "A repository template for ECMAScript proposals.",
+  "name": "proposal-accessible-object-hasownproperty",
+  "description": "Object.hasOwn() proposal for ECMAScript",
   "main": "./polyfill.js",
   "scripts": {
     "start": "npm run build-loose -- --watch",
     "build": "npm run build-loose -- --strict",
     "build-loose": "ecmarkup --verbose spec.emu index.html"
   },
-  "homepage": "https://github.com/jamiebuilds/proposal-object-has#readme",
+  "homepage": "https://github.com/tc39/proposal-accessible-object-hasownproperty#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamiebuilds/proposal-object-has.git"
+    "url": "git+https://github.com/tc39/proposal-accessible-object-hasownproperty.git"
   },
   "license": "MIT",
   "devDependencies": {
