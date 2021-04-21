@@ -13,11 +13,8 @@ contributors: Jamie Kyle
   <h1>Object.has ( _object_, _property_ )</h1>
   <p>When the `has` method is called, the following steps are taken:</p>
   <emu-alg>
-    1. [id="step-has-topropertykey"] Let _P_ be ? ToPropertyKey(_property_).
     1. [id="step-has-toobject"] Let _O_ be ? ToObject(_object_).
+    1. [id="step-has-topropertykey"] Let _P_ be ? ToPropertyKey(_property_).
     1. Return ? HasOwnProperty(_O_, _P_).
   </emu-alg>
-  <emu-note>
-    <p>The ordering of steps <emu-xref href="#step-has-topropertykey"></emu-xref> and <emu-xref href="#step-has-toobject"></emu-xref> is chosen to ensure that any exception that would have been thrown by step <emu-xref href="#step-has-topropertykey"></emu-xref> in previous editions of this specification will continue to be thrown even if the *this* value is *undefined* or *null*.</p>
-  </emu-note>
 </emu-clause>
