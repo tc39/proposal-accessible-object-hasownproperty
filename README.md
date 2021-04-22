@@ -99,7 +99,7 @@ The MDN documentation for `Object.prototype.hasOwnProperty` includes [advice][md
 
 ## Proposal
 
-This proposal adds a `Object.has(object, property)` method with the same behavior as calling `hasOwnProperty.call(object, property)`
+This proposal adds a `Object.hasOwn(object, property)` method with the same behavior as calling `hasOwnProperty.call(object, property)`
 
 ```js
 let object = { foo: false }
@@ -114,7 +114,7 @@ Object.hasOwn(object3, "foo") // false
 
 ## Implementations
 
-There are currently no native implementations of `Object.has` in JavaScript engines.
+There are currently no native implementations of `Object.hasOwn` in JavaScript engines.
 
 A polyfill of `Object.hasOwn()` is available in [polyfill.js](./polyfill.js) or in [core-js](https://github.com/zloirock/core-js/#accessible-objecthasownproperty)
 
