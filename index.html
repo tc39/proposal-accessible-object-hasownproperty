@@ -1064,7 +1064,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let sdoMap = JSON.parse(`{}`);
-let biblio = JSON.parse(`{"refsByClause":{"sec-object.hasown":["_ref_0","_ref_1","_ref_2"]},"entries":[{"type":"clause","id":"sec-object.hasown","aoid":null,"titleHTML":"Object.hasOwn ( <var>object</var>, <var>property</var> )","number":"1","referencingIds":[],"key":"Object.hasOwn ( object, property )"},{"type":"clause","id":"sec-copyright-and-software-license","aoid":null,"titleHTML":"Copyright &amp; Software License","number":"A","referencingIds":[],"key":"Copyright & Software License"}]}`);</script><style>body {
+let biblio = JSON.parse(`{"refsByClause":{"sec-object.hasown":["_ref_0","_ref_1","_ref_2"]},"entries":[{"type":"clause","id":"sec-object.hasown","aoid":null,"titleHTML":"Object.hasOwn ( <var>O</var>, <var>P</var> )","number":"1","referencingIds":[],"key":"Object.hasOwn ( O, P )"},{"type":"clause","id":"sec-copyright-and-software-license","aoid":null,"titleHTML":"Copyright &amp; Software License","number":"A","referencingIds":[],"key":"Copyright & Software License"}]}`);</script><style>body {
   display: flex;
   font-size: 18px;
   line-height: 1.5;
@@ -2208,12 +2208,12 @@ li.menu-search-result-term:before {
 .normative-optional-tag a {
   color: #884400;
 }
-</style></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-object.hasown" title="Object.hasOwn ( object, property )"><span class="secnum">1</span> Object.hasOwn ( <var>object</var>, <var>property</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 2 Draft / April 22, 2021</h1><h1 class="title">Accessible <code>Object.hasOwnProperty</code></h1>
+</style></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-object.hasown" title="Object.hasOwn ( O, P )"><span class="secnum">1</span> Object.hasOwn ( <var>O</var>, <var>P</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 2 Draft / April 28, 2021</h1><h1 class="title">Accessible <code>Object.hasOwnProperty</code></h1>
 
 <emu-clause id="sec-object.hasown">
-  <h1><span class="secnum">1</span> Object.hasOwn ( <var>object</var>, <var>property</var> )</h1>
+  <h1><span class="secnum">1</span> Object.hasOwn ( <var>O</var>, <var>P</var> )</h1>
   <p>When the <code>hasOwn</code> method is called, the following steps are taken:</p>
-  <emu-alg><ol><li>Let <var>O</var> be ?&nbsp;<emu-xref aoid="ToObject" id="_ref_0"><a href="https://tc39.es/ecma262/#sec-toobject">ToObject</a></emu-xref>(<var>object</var>).</li><li>Let <var>P</var> be ?&nbsp;<emu-xref aoid="ToPropertyKey" id="_ref_1"><a href="https://tc39.es/ecma262/#sec-topropertykey">ToPropertyKey</a></emu-xref>(<var>property</var>).</li><li>Return ?&nbsp;<emu-xref aoid="HasOwnProperty" id="_ref_2"><a href="https://tc39.es/ecma262/#sec-hasownproperty">HasOwnProperty</a></emu-xref>(<var>O</var>, <var>P</var>).</li></ol></emu-alg>
+  <emu-alg><ol><li>Let <var>obj</var> be ?&nbsp;<emu-xref aoid="ToObject" id="_ref_0"><a href="https://tc39.es/ecma262/#sec-toobject">ToObject</a></emu-xref>(<var>O</var>).</li><li>Let <var>key</var> be ?&nbsp;<emu-xref aoid="ToPropertyKey" id="_ref_1"><a href="https://tc39.es/ecma262/#sec-topropertykey">ToPropertyKey</a></emu-xref>(<var>P</var>).</li><li>Return ?&nbsp;<emu-xref aoid="HasOwnProperty" id="_ref_2"><a href="https://tc39.es/ecma262/#sec-hasownproperty">HasOwnProperty</a></emu-xref>(<var>obj</var>, <var>key</var>).</li></ol></emu-alg>
 </emu-clause><emu-annex id="sec-copyright-and-software-license">
       <h1><span class="secnum">A</span> Copyright &amp; Software License</h1>
       
