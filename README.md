@@ -8,7 +8,7 @@ This proposal is currently at [Stage 2](https://github.com/tc39/proposals#stage-
 
 Authors:
 
-- [@jamiebuilds](https://github.com/jamiebuilds) (Jamie Kyle, Discord)
+- [@jamiebuilds](https://github.com/jamiebuilds) (Jamie Kyle, Rome)
 - Champion: [@bnb](https://github.com/bnb) (Tierney Cyren, Microsoft)
 
 Slides:
