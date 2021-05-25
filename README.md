@@ -4,7 +4,7 @@ Proposal for an `Object.hasOwn()` method to make `Object.prototype.hasOwnPropert
 
 ## Status
 
-This proposal is currently at [Stage 2](https://github.com/tc39/proposals#stage-2)
+This proposal is currently at [Stage 3](https://github.com/tc39/proposals#stage-3)
 
 Authors:
 
@@ -15,6 +15,7 @@ Slides:
 
 - [For stage 1](https://docs.google.com/presentation/d/1FvDwrmzin_qGMzH-Cc8l5bHK91UxkpZJwuugoay5aNQ/edit#slide=id.p) on [2021/04](https://github.com/tc39/agendas/blob/master/2021/04.md)
 - [For stage 3](https://docs.google.com/presentation/d/1r5_Jw-gR8cRNo7SJyWtd6h_fEyVFJr9t3a2FvCBPiLE/edit?usp=sharing)
+
 ## Motivation
 
 Today, it is very common (especially in library code) to write code like:
