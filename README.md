@@ -115,9 +115,10 @@ Object.hasOwn(object3, "foo") // false
 
 ## Implementations
 
-There are currently no native implementations of `Object.hasOwn` in JavaScript engines.
+Native implementations of `Object.hasOwn` in JavaScript engines are available in:
 
-- [WIP: SpiderMonkey](https://hg.mozilla.org/try/rev/94515f78324e83d4fd84f4b0ab764b34aabe6d80)
+- [SpiderMonkey](https://hg.mozilla.org/try/rev/94515f78324e83d4fd84f4b0ab764b34aabe6d80) (work in progress)
+- [SerenityOS: LibJS](https://github.com/SerenityOS/serenity/commit/3ee092cd0cacb999469e50aa5ff220e397df2d79)
 
 Polyfills of `Object.hasOwn()` are available in:
 
