@@ -127,7 +127,7 @@ A polyfill of `Object.hasOwn()` is available in [polyfill.js](./polyfill.js) or 
 
 ### Why the name `hasOwn`?
 
-This is actively being discussed in Stage 2, see [Issue #3](https://github.com/tc39/proposal-accessible-object-hasownproperty/issues/3)
+See [Issue #3](https://github.com/tc39/proposal-accessible-object-hasownproperty/issues/3)
 
 ### Why not use `Map` for dictionaries instead of objects?
 
