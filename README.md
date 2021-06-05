@@ -126,6 +126,10 @@ Polyfills of `Object.hasOwn()` are available in:
 - [npm: object.hasown](https://www.npmjs.com/package/object.hasown)
 - [core-js](https://github.com/zloirock/core-js/#accessible-objecthasownproperty)
 
+Babel plugin is available:
+
+- [babel-plugin-transform-object-hasown](https://github.com/niksy/babel-plugin-transform-object-hasown)
+
 ## Q&A
 
 ### Why not `Object.hasOwnProperty(object, property)`?
