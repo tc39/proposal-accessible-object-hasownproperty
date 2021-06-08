@@ -2,6 +2,12 @@
 
 Proposal for an `Object.hasOwn()` method to make `Object.prototype.hasOwnProperty()` more accessible.
 
+## 👋 Now Gathering Community Feedback
+
+Please see the [Implementations](#implementations) section for polyfills and a codemod to start using `Object.hasOwn()` in your code today. 
+
+If you are using `Object.hasOwn()` please provide feedback in [issue #18](https://github.com/tc39/proposal-accessible-object-hasownproperty/issues/18) (positive and/or negative feedback is encouraged).
+
 ## Status
 
 This proposal is currently at [Stage 3](https://github.com/tc39/proposals#stage-3)
@@ -126,6 +132,10 @@ Polyfills of `Object.hasOwn()` are available in:
 - [./polyfill.js](./polyfill.js)
 - [npm: object.hasown](https://www.npmjs.com/package/object.hasown)
 - [core-js](https://github.com/zloirock/core-js/#accessible-objecthasownproperty)
+
+A codemod to migrate to `Object.hasOwn()` from similar libraries is available:
+
+- [`Object.hasOwn()` codemod](https://gist.github.com/jamiebuilds/f4ff76397d31b69c484240379170af8c)
 
 ## Q&A
 
