@@ -21,6 +21,7 @@ Slides:
 
 - [For stage 1](https://docs.google.com/presentation/d/1FvDwrmzin_qGMzH-Cc8l5bHK91UxkpZJwuugoay5aNQ/edit#slide=id.p) on [2021/04](https://github.com/tc39/agendas/blob/master/2021/04.md) (Reached Stage 2)
 - [For stage 3](https://docs.google.com/presentation/d/1r5_Jw-gR8cRNo7SJyWtd6h_fEyVFJr9t3a2FvCBPiLE/edit?usp=sharing) on [2021/05](https://github.com/tc39/agendas/blob/master/2021/05.md) (Reached Stage 3)
+- [Stage 3 update](https://docs.google.com/presentation/d/1UbbNOjNB6XpMGo1GGwl0b8lVsNoCPPPLBByPYc7i5IY/edit?usp=sharing) (upcoming)
 
 ## Motivation
 
@@ -123,9 +124,13 @@ Object.hasOwn(object3, "foo") // false
 
 Native implementations of `Object.hasOwn` in JavaScript engines are available in:
 
-- [V8](https://chromium-review.googlesource.com/c/v8/v8/+/2922117)
-- [SpiderMonkey](https://hg.mozilla.org/try/rev/94515f78324e83d4fd84f4b0ab764b34aabe6d80) (work in progress)
-- [SerenityOS: LibJS](https://github.com/SerenityOS/serenity/commit/3ee092cd0cacb999469e50aa5ff220e397df2d79)
+- Browsers:
+  - [V8](https://chromium-review.googlesource.com/c/v8/v8/+/2922117) (feature-flagged)
+  - [SpiderMonkey](https://hg.mozilla.org/try/rev/94515f78324e83d4fd84f4b0ab764b34aabe6d80) (feature-flagged)
+  - [JavaScriptCore](https://bugs.webkit.org/show_bug.cgi?id=226291#c2) (in-progress?)
+- Others:
+  - [SerenityOS: LibJS](https://github.com/SerenityOS/serenity/commit/3ee092cd0cacb999469e50aa5ff220e397df2d79)
+  - [engine262](https://github.com/engine262/engine262/pull/163) (in-progress)
 
 Polyfills of `Object.hasOwn()` are available in:
 
