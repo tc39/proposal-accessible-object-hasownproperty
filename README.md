@@ -130,7 +130,7 @@ Native implementations of `Object.hasOwn` in JavaScript engines are available in
   - [JavaScriptCore](https://bugs.webkit.org/show_bug.cgi?id=226291#c2) (in-progress?)
 - Others:
   - [SerenityOS: LibJS](https://github.com/SerenityOS/serenity/commit/3ee092cd0cacb999469e50aa5ff220e397df2d79)
-  - [engine262](https://github.com/engine262/engine262/pull/163) (in-progress)
+  - [engine262](https://github.com/engine262/engine262/pull/163)
 
 Polyfills of `Object.hasOwn()` are available in:
 
