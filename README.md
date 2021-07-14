@@ -142,6 +142,10 @@ A codemod to migrate to `Object.hasOwn()` from similar libraries is available:
 
 - [`Object.hasOwn()` codemod](https://gist.github.com/jamiebuilds/f4ff76397d31b69c484240379170af8c)
 
+There's also an eslint rule for enforcing usage of `hasOwn` instead of `hasOwnProperty`:
+
+- [`unicorn/prefer-object-has-own`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-has-own.md)
+
 ## Q&A
 
 ### Why not `Object.hasOwnProperty(object, property)`?
