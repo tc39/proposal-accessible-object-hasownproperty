@@ -125,7 +125,7 @@ Object.hasOwn(object3, "foo") // false
 Native implementations of `Object.hasOwn` in JavaScript engines are available in:
 
 - Browsers:
-  - [V8](https://chromium-review.googlesource.com/c/v8/v8/+/2922117) (feature-flagged)
+  - [V8](https://chromium-review.googlesource.com/c/v8/v8/+/2922117) ([shipped](https://v8.dev/blog/v8-release-93))
   - [SpiderMonkey](https://hg.mozilla.org/try/rev/94515f78324e83d4fd84f4b0ab764b34aabe6d80) (feature-flagged)
   - [JavaScriptCore](https://bugs.webkit.org/show_bug.cgi?id=226291#c2) (in-progress)
 - Others:
