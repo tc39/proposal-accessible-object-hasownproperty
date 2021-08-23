@@ -127,7 +127,7 @@ Native implementations of `Object.hasOwn` in JavaScript engines are available in
 - Browsers:
   - [V8](https://chromium-review.googlesource.com/c/v8/v8/+/2922117) (feature-flagged)
   - [SpiderMonkey](https://hg.mozilla.org/try/rev/94515f78324e83d4fd84f4b0ab764b34aabe6d80) (feature-flagged)
-  - [JavaScriptCore](https://bugs.webkit.org/show_bug.cgi?id=226291#c2) (in-progress?)
+  - [JavaScriptCore](https://bugs.webkit.org/show_bug.cgi?id=226291#c2) (in-progress)
 - Others:
   - [SerenityOS: LibJS](https://github.com/SerenityOS/serenity/commit/3ee092cd0cacb999469e50aa5ff220e397df2d79)
   - [engine262](https://github.com/engine262/engine262/pull/163)
